@@ -1,26 +1,30 @@
 import unittest
 import helper_llists as llists
 
+import unittest
+import helper_llists as llists
+import math
+
 def get_on_switches(node):
     """
     ??? Write what needs to be done ???
     """
-    l = []
+    l=[]
     while(node!=None):
         l.append(node.val)
-        node = node.next
-    ouput_switch = []
+        node=node.next
+        switch_final=[]
     for switch in l:
-        s = int(math.log(int(switch),2))
-        if(s in ouput_switch):
-            ouput_switch.remove(s)
+        s=int(math.log(int(switch),2))
+        if(s in switch_final):
+            switch_final.remove(s)
         else:
-            ouput_switch.append(s)
-    
-    return sorted(ouput_switch)
+            switch_final.append(s)
+    return sorted(switch_final)            
+
+    pass
 
 
-    
 class TestGetOnSwitches(unittest.TestCase):
 
     def test_01(self):
@@ -65,4 +69,4 @@ class TestGetOnSwitches(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)    
+    unittest.main(verbosity=2)
